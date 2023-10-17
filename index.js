@@ -16,7 +16,9 @@ let check = 0;
 
 app.use(express.static('public'));
 // mongoose.connect('mongodb://127.0.0.1:27017/myapp',{useNewUrlParser:'true'});
-mongoose.connect('mongodb://127.0.0.1:27017/myapp', {
+// Atlas key
+const uri = "mongodb://127.0.0.1:27017/myapp" || "mongodb+srv://soojalagrawal102003:X26wirct5oBwGIPq@cluster0.mwgkumm.mongodb.net/'"
+mongoose.connect(uri, {
           useNewUrlParser: true,
           useUnifiedTopology: true,
         });
