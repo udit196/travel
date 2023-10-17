@@ -96,7 +96,7 @@ app.post('/destination',function(req,res){
   console.log(req.body.place1);
   if(req.body.place1 == "bhopal"){
     // Render the EJS template and pass dynamic data
-    const token = '';
+    const token = '214678f7a791cf4ab3df0ef9fc9ceef6';
     const latitude = 23.2599;
     const longitude = 77.4126;
     const city="bhopal";
@@ -132,7 +132,7 @@ app.post('/destination',function(req,res){
   }
   else if(req.body.place1 == "indore"){
     const city=req.body.place1;
-    const token='';
+    const token='2a9f539aa7d066eeb4acc649730f05a3';
     const latitude = 22.719569;
     const longitude = 75.857726;
     res.render('indore',{token,city,latitude,longitude});
