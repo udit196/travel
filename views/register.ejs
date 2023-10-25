@@ -86,7 +86,7 @@ body{
 } */
 
 form {
-    height: 593px;
+    height: 693px;
     width: 400px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
@@ -98,6 +98,7 @@ form {
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
     padding: 50px 35px;
+    margin-top:40px;
 }
 form *{
     font-family: 'Poppins',sans-serif;
@@ -145,8 +146,8 @@ button{
     cursor: pointer;
 }
 .social{
-  margin-top: 30px;
-  display: flex;
+    margin-top: 30px;
+    display: flex;
 }
 .social div{
   background: red;
@@ -158,13 +159,18 @@ button{
   text-align: center;
 }
 .social div:hover{
-  background-color: rgba(255,255,255,0.47);
+    background-color: rgba(255,255,255,0.47);
 }
 .social .fb{
-  margin-left: 25px;
+    margin-left: 25px;
 }
 .social i{
-  margin-right: 4px;
+    margin-right: 4px;
+}
+
+#sub_but{
+    background-color: #ffffff;
+    color: black;
 }
 
     </style>
@@ -180,13 +186,16 @@ button{
         <label for="email">Email</label>
         <input type="email" name="email" placeholder="Email" id="email" required>
 
+        <label for="name">Name</label>
+        <input type="text" name="name" placeholder="Name" id="name" required>
+
         <label for="password">Password</label>
         <input type="password" name="password" placeholder="Password" id="password" required>
         
 		<label for="confirmpassword">Confirm Password</label>
         <input type="password" name="confirmpassword" placeholder="Confirm Password" id="confirmpassword" required>
 
-        <input type="submit" name="submit" placeholder="submit">
+        <input type="submit"  id="sub_but" ame="submit" placeholder="submit">
         <div class="social">
           <div class="go"><i class="fab fa-google"></i>  Google</div>
           <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
