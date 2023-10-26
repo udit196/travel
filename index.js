@@ -26,10 +26,12 @@ app.use(express.static('public'));
 
 // Atlas key
 const uri= `${process.env.uri}`;
+// const uri= `${process.env.mong}`;
+// const uri= `${process.env.uri1}`;
 mongoose.connect(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -107,21 +109,21 @@ app.post('/destination',function(req,res){
   console.log(req.body.place1);
   if(req.body.place1 == "bhopal"){
     // Render the EJS template and pass dynamic data
-    const token = '214678f7a791cf4ab3df0ef9fc9ceef6';
+    const token1 = `${process.env.token1}`;
     const latitude = 23.2599;
     const longitude = 77.4126;
     const city="bhopal";
     
     // Render the EJS template and pass dynamic data
-    res.render('bhopal', { token, latitude, longitude,city,});
+    res.render('bhopal', { token1, latitude, longitude,city,});
     // res.render('bhopal');
   }
   else if(req.body.place1 == "indore"){
     const city=req.body.place1;
-    const token='2a9f539aa7d066eeb4acc649730f05a3';
+    const token2= `${process.env.token2}`;
     const latitude = 22.719569;
     const longitude = 75.857726;
-    res.render('indore',{token,city,latitude,longitude});
+    res.render('indore',{token2,city,latitude,longitude});
   }
   else{
     res.render('home',{imageFileName: 'hero_bg.jpg',check:check});
@@ -180,7 +182,7 @@ app.post("/login",(req,res)=>{
   User.findOne({email : username}).then((foundUser) => {
     if(foundUser.password===password){
       user=foundUser.name;
-      console.log(user);
+      // console.log(user);
       check = 1;
       res.render('home',{imageFileName: 'hero_bg.jpg',check:check});
     }
